@@ -1,83 +1,63 @@
- # Sistema de Classificação de Resíduos com IA
+                                                    Sistema de Classificação de Resíduos com  Visão Computacional  Edge AI
+                                                    
+Este projeto consiste em um sistema de visão computacional voltado para a classificação automática
+de resíduos industriais. Através da integração entre inteligência artificial e hardware embarcado,
+a solução permite a identificação e separação de materiais em tempo real, otimizando processos de 
+reciclagem e gestão ambiental.
 
-Sistema de visão computacional para classificação automática de resíduos industriais, utilizando inteligência artificial e processamento em tempo real.
+Propósito
+O objetivo central é automatizar a triagem de materiais descartados, reduzindo a margem de erro humana
+e aumentando a velocidade de processamento em linhas de separação. O sistema atua diretamente na
+identificação de cinco categorias principais:
 
-## 🎯 Objetivo
+Biológico
+Metal
+Plástico
+Vidro
+Papel
 
-Automatizar a identificação e separação de resíduos, contribuindo para processos industriais mais eficientes e sustentáveis.
+Tecnologias e Ferramentas
+A arquitetura do sistema foi desenhada para equilibrar performance computacional e viabilidade física:
+Linguagem e Frameworks: Python para a lógica de backend e FastAPI para a disponibilização de 
+uma API de alta performance.
+Visão Computacional: Utilização do YOLO (Ultralytics) para detecção e classificação de objetos.
+Hardware e Embarcados: ESP32-CAM para captura de imagens e ESP32 padrão para o controle físico da 
+esteira e dos servo-motores (atuadores).
+Infraestrutura: Docker para garantir a portabilidade e facilitar o deploy em 
+diferentes ambientes industriais.
 
-### Categorias classificadas
+                                                                 Estrutura do Repositório
+                                       
+O projeto está organizado de forma modular para facilitar a manutenção e o treinamento do modelo:
 
-* Biológico
-* Metal
-* Plástico
-* Vidro
-* Papel
-
----
-
-## 🔧 Tecnologias Utilizadas
-
-* Python — backend e processamento
-* FastAPI — API de alta performance
-* YOLO / Ultralytics — detecção e classificação por visão computacional
-* ESP32-CAM — captura de imagens e integração embarcada
-* ESP32 — Controle dos atuadores(servo-motores) e do funcionamento da esteira
-* Docker — containerização e portabilidade
-
----
-
-## 📁 Estrutura do Projeto
-
-```
+Plaintext
 backend/
- ├── app.py            # API principal
- ├── dataset/          # Dados de treino
- ├── weights/          # Pesos do modelo treinado
- ├── runs/             # Resultados de treino
- ├── static/           # Arquivos estáticos
-```
+ ├── app.py            # Ponto de entrada da API e rotas principais
+ ├── dataset/          # Base de dados utilizada para o treinamento da IA
+ ├── weights/          # Arquivos de pesos (.pt) do modelo treinado
+ ├── runs/             # Logs e métricas resultantes dos ciclos de treino
+ ├── static/           # Arquivos estáticos e recursos de suporte
+ 
+                                                               Procedimentos de Execução
+Instalação de Dependências
+Certifique-se de ter o Python instalado e execute o comando abaixo para configurar o ambiente:
 
----
-
-## 🚀 Como Executar
-
-### 1️⃣ Instalar dependências
-
-```bash
+ Bash
 pip install -r requirements.txt
-```
+Inicialização do Sistema
+Para colocar a API em funcionamento, execute o script principal:
 
-### 2️⃣ Iniciar a API
-
-```bash
+ Bash
 python backend/app.py
-```
+O serviço será instanciado localmente no endereço: http://localhost:8000
 
-A API estará disponível em:
+                                                               Capacidades do Sistema
+                                                               
+Processamento em Tempo Real: Classificação instantânea assim que o resíduo é detectado pela câmera.
+Integração de Hardware: Comunicação direta entre o processamento de imagem e o controle físico dos motores.
+Aprendizado Contínuo: Estrutura preparada para a inclusão de novos dados e refinamento da precisão do modelo.
+Escalabilidade: Arquitetura modular que permite a expansão para novas categorias de resíduos ou múltiplas linhas de produção.
 
-```
-http://localhost:8000
-```
-
----
-
-## 🧠 Funcionalidades
-
-* Classificação automática de resíduos em tempo real
-* Integração com câmera/ESP32
-* Estrutura pronta para treinamento contínuo
-* Arquitetura modular e escalável
-
----
-
-## 📌 Status do Projeto
-
-🚧 Em desenvolvimento — melhorias contínuas em precisão e desempenho.
-
----
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT.
-
+                                                                Status de Desenvolvimento
+O sistema encontra-se em fase de aprimoramento. O foco atual reside no aumento da precisão de detecção
+em condições variadas de iluminação e na redução da latência entre a captura da imagem e a resposta do atuador.
