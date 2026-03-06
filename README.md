@@ -5,7 +5,7 @@ de resíduos industriais. Através da integração entre inteligência artificia
 a solução permite a identificação e separação de materiais em tempo real, otimizando processos de 
 reciclagem e gestão ambiental.
 
-Propósito
+            Propósito
 O objetivo central é automatizar a triagem de materiais descartados, reduzindo a margem de erro humana
 e aumentando a velocidade de processamento em linhas de separação. O sistema atua diretamente na
 identificação de cinco categorias principais:
@@ -16,7 +16,7 @@ Plástico
 Vidro
 Papel
 
-Tecnologias e Ferramentas
+          Tecnologias e Ferramentas
 A arquitetura do sistema foi desenhada para equilibrar performance computacional e viabilidade física:
 Linguagem e Frameworks: Python para a lógica de backend e FastAPI para a disponibilização de 
 uma API de alta performance.
